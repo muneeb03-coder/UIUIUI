@@ -2,8 +2,19 @@
 import { GoogleGenAI, ThinkingLevel } from "@google/genai";
 import { Message, Language, Attachment } from "../types";
 
-// Initialize Gemini
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initialize Gemini lazily to prevent crashes if API key is missing
+let aiInstance: GoogleGenAI | null = null;
+
+const getAiInstance = () => {
+  if (!aiInstance) {
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      throw new Error("GEMINI_API_KEY is not defined. Please check your environment variables.");
+    }
+    aiInstance = new GoogleGenAI({ apiKey });
+  }
+  return aiInstance;
+};
 
 const SYSTEM_INSTRUCTION = `
 Anda adalah asisten virtual profesional untuk platform "E-care" yang ahli dalam pengelolaan sampah organik.
@@ -68,6 +79,7 @@ export const sendMessageToGemini = async (
       parts: currentParts
     });
 
+    const ai = getAiInstance();
     const response = await ai.models.generateContent({
       model: model,
       contents: contents,
