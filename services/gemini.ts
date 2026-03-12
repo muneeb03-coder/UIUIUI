@@ -103,9 +103,18 @@ export const sendMessageToGemini = async (
     if (language === 'en') return "I apologize, I am unable to process that request at the moment.";
     return "Mohon maaf, saya sedang kesulitan memproses informasi saat ini.";
 
-  } catch (error) {
+  } catch (error: any) {
     console.error("Gemini API Error:", error);
+    if (error?.message?.includes("GEMINI_API_KEY")) {
+      return language === 'en' 
+        ? "API Key is not configured. Please set GEMINI_API_KEY in your environment variables."
+        : "API Key belum dikonfigurasi. Silakan atur GEMINI_API_KEY di environment variables Anda.";
+    }
     if (language === 'en') return "Sorry, connection error. Please try again later.";
     return "Maaf, terjadi kesalahan koneksi. Silakan coba lagi nanti.";
   }
+};
+
+export const isGeminiConfigured = (): boolean => {
+  return !!process.env.GEMINI_API_KEY;
 };

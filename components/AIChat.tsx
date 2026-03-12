@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User, Sparkles, Paperclip, Image as ImageIcon, Mic, Square, X, FileText } from 'lucide-react';
-import { sendMessageToGemini } from '../services/gemini';
+import { Send, Bot, User, Sparkles, Paperclip, Image as ImageIcon, Mic, Square, X, FileText, AlertTriangle } from 'lucide-react';
+import { sendMessageToGemini, isGeminiConfigured } from '../services/gemini';
 import { Message, Attachment } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useSettings } from '../contexts/SettingsContext';
@@ -15,6 +15,7 @@ export const AIChat: React.FC = () => {
   const [attachments, setAttachments] = useState<Attachment[]>([]);
   const [isRecording, setIsRecording] = useState(false);
   const [recordingTime, setRecordingTime] = useState(0);
+  const [isConfigured, setIsConfigured] = useState(true);
   
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -23,6 +24,7 @@ export const AIChat: React.FC = () => {
 
   useEffect(() => {
     setMessages([{ role: 'model', text: t('ai_welcome') }]);
+    setIsConfigured(isGeminiConfigured());
   }, [language]);
 
   const scrollToBottom = () => {
@@ -147,6 +149,16 @@ export const AIChat: React.FC = () => {
         </div>
 
         <div className="bg-eco-brown-100 rounded-xl shadow-xl overflow-hidden border border-eco-brown-200 flex flex-col h-[600px]">
+          {!isConfigured && (
+            <div className="bg-amber-50 border-b border-amber-200 p-4 flex items-center gap-3">
+              <AlertTriangle className="h-5 w-5 text-amber-600 flex-shrink-0" />
+              <p className="text-sm text-amber-800">
+                {language === 'id' 
+                  ? "API Key belum terdeteksi. Chatbot tidak akan berfungsi sampai Anda menambahkan GEMINI_API_KEY di pengaturan environment."
+                  : "API Key not detected. Chatbot will not work until you add GEMINI_API_KEY to your environment settings."}
+              </p>
+            </div>
+          )}
           {/* Chat Area */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((msg, index) => (
