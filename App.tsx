@@ -12,7 +12,7 @@ import { LanguageProvider } from './contexts/LanguageContext';
 import { SettingsProvider } from './contexts/SettingsContext';
 
 const App: React.FC = () => {
-  const [view, setView] = useState<'dashboard' | 'problem' | 'quiz' | 'solution'>('dashboard');
+  const [view, setView] = useState<'dashboard' | 'problem' | 'quiz' | 'solution' | 'ai'>('dashboard');
 
   return (
     <SettingsProvider>
@@ -23,6 +23,7 @@ const App: React.FC = () => {
             onProblemClick={() => setView('problem')}
             onSolutionClick={() => setView('solution')}
             onHomeClick={() => setView('dashboard')}
+            onAIClick={() => setView('ai')}
           />
           <main className="flex-grow">
             {view === 'quiz' ? (
@@ -31,6 +32,18 @@ const App: React.FC = () => {
               <BandungWaste onBack={() => setView('dashboard')} />
             ) : view === 'solution' ? (
               <SolutionView onBack={() => setView('dashboard')} />
+            ) : view === 'ai' ? (
+              <div className="pt-10">
+                <AIChat />
+                <div className="flex justify-center pb-20">
+                  <button 
+                    onClick={() => setView('dashboard')}
+                    className="px-8 py-3 bg-eco-green-800 text-white font-black rounded-full shadow-xl hover:bg-eco-green-900 transition-all"
+                  >
+                    Kembali ke Beranda
+                  </button>
+                </div>
+              </div>
             ) : (
               <>
                 <Hero onLearnMore={() => setView('problem')} />

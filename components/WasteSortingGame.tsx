@@ -11,32 +11,33 @@ interface WasteItem {
   name: string;
   type: 'organic' | 'non-organic' | 'b3';
   image: string;
+  explanation: string;
 }
 
 const WASTE_POOL: WasteItem[] = [
   // Organic
-  { id: 1, name: 'Tulang Ayam', type: 'organic', image: 'https://images.unsplash.com/photo-1585325701166-381ca9117f41?auto=format&fit=crop&w=400&q=80' },
-  { id: 2, name: 'Kulit Jeruk', type: 'organic', image: 'https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=400&q=80' },
-  { id: 3, name: 'Sisa Nasi', type: 'organic', image: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=400&q=80' },
-  { id: 4, name: 'Daun Kering', type: 'organic', image: 'https://images.unsplash.com/photo-1508500351770-9c21d7915044?auto=format&fit=crop&w=400&q=80' },
-  { id: 5, name: 'Kulit Pisang', type: 'organic', image: 'https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80' },
-  { id: 6, name: 'Sisa Sayur', type: 'organic', image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80' },
-  { id: 7, name: 'Ampas Kopi', type: 'organic', image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=400&q=80' },
+  { id: 1, name: 'Tulang Ayam', type: 'organic', image: 'https://images.unsplash.com/photo-1585325701166-381ca9117f41?auto=format&fit=crop&w=400&q=80', explanation: 'Tulang ayam adalah sisa makanan yang bisa membusuk secara alami.' },
+  { id: 2, name: 'Kulit Jeruk', type: 'organic', image: 'https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=400&q=80', explanation: 'Kulit buah termasuk sampah organik yang sangat bagus untuk kompos.' },
+  { id: 3, name: 'Sisa Nasi', type: 'organic', image: 'https://images.unsplash.com/photo-1516684732162-798a0062be99?auto=format&fit=crop&w=400&q=80', explanation: 'Sisa makanan seperti nasi adalah bahan organik yang mudah terurai.' },
+  { id: 4, name: 'Daun Kering', type: 'organic', image: 'https://images.unsplash.com/photo-1508500351770-9c21d7915044?auto=format&fit=crop&w=400&q=80', explanation: 'Daun kering adalah sampah organik cokelat yang kaya akan karbon.' },
+  { id: 5, name: 'Kulit Pisang', type: 'organic', image: 'https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=400&q=80', explanation: 'Kulit pisang mengandung banyak nutrisi untuk tanaman jika dikomposkan.' },
+  { id: 6, name: 'Sisa Sayur', type: 'organic', image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80', explanation: 'Sisa sayuran mentah adalah bahan organik hijau yang kaya nitrogen.' },
+  { id: 7, name: 'Ampas Kopi', type: 'organic', image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=400&q=80', explanation: 'Ampas kopi bisa langsung ditaburkan ke tanah sebagai pupuk organik.' },
   
   // Non-Organic
-  { id: 8, name: 'Botol Plastik', type: 'non-organic', image: 'https://images.unsplash.com/photo-1523293913410-44a2b3d38f1f?auto=format&fit=crop&w=400&q=80' },
-  { id: 9, name: 'Kaleng Soda', type: 'non-organic', image: 'https://images.unsplash.com/photo-1527960471264-93ad993981fe?auto=format&fit=crop&w=400&q=80' },
-  { id: 10, name: 'Kertas Koran', type: 'non-organic', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=400&q=80' },
-  { id: 11, name: 'Styrofoam', type: 'non-organic', image: 'https://images.unsplash.com/photo-1605600611284-19561ad7ddf0?auto=format&fit=crop&w=400&q=80' },
-  { id: 12, name: 'Plastik Kresek', type: 'non-organic', image: 'https://images.unsplash.com/photo-1591193512858-12ee596882f1?auto=format&fit=crop&w=400&q=80' },
-  { id: 13, name: 'Kaca Pecah', type: 'non-organic', image: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?auto=format&fit=crop&w=400&q=80' },
+  { id: 8, name: 'Botol Plastik', type: 'non-organic', image: 'https://images.unsplash.com/photo-1523293913410-44a2b3d38f1f?auto=format&fit=crop&w=400&q=80', explanation: 'Botol plastik butuh ratusan tahun untuk terurai, harus didaur ulang.' },
+  { id: 9, name: 'Kaleng Soda', type: 'non-organic', image: 'https://images.unsplash.com/photo-1527960471264-93ad993981fe?auto=format&fit=crop&w=400&q=80', explanation: 'Kaleng logam termasuk sampah anorganik yang bisa didaur ulang selamanya.' },
+  { id: 10, name: 'Kertas Koran', type: 'non-organic', image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=400&q=80', explanation: 'Meskipun dari kayu, kertas olahan seringkali mengandung tinta dan bahan kimia.' },
+  { id: 11, name: 'Styrofoam', type: 'non-organic', image: 'https://images.unsplash.com/photo-1605600611284-19561ad7ddf0?auto=format&fit=crop&w=400&q=80', explanation: 'Styrofoam sangat sulit didaur ulang dan berbahaya bagi lingkungan.' },
+  { id: 12, name: 'Plastik Kresek', type: 'non-organic', image: 'https://images.unsplash.com/photo-1597348344664-31c11b3cc9a0?auto=format&fit=crop&w=400&q=80', explanation: 'Kantong plastik adalah polutan utama di laut dan tanah.' },
+  { id: 13, name: 'Kaca Pecah', type: 'non-organic', image: 'https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?auto=format&fit=crop&w=400&q=80', explanation: 'Kaca tidak bisa membusuk dan harus dipisahkan demi keamanan.' },
   
   // B3 (Hazardous)
-  { id: 14, name: 'Baterai Bekas', type: 'b3', image: 'https://images.unsplash.com/photo-1619641782822-751f8523ad74?auto=format&fit=crop&w=400&q=80' },
-  { id: 15, name: 'Lampu TL', type: 'b3', image: 'https://images.unsplash.com/photo-1550985616-10810253b84d?auto=format&fit=crop&w=400&q=80' },
-  { id: 16, name: 'Botol Obat Nyamuk', type: 'b3', image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80' },
-  { id: 17, name: 'Masker Medis', type: 'b3', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80' },
-  { id: 18, name: 'Aki Bekas', type: 'b3', image: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=400&q=80' },
+  { id: 14, name: 'Baterai Bekas', type: 'b3', image: 'https://images.unsplash.com/photo-1619641782822-751f8523ad74?auto=format&fit=crop&w=400&q=80', explanation: 'Baterai mengandung logam berat beracun yang bisa mencemari air tanah.' },
+  { id: 15, name: 'Lampu TL', type: 'b3', image: 'https://images.unsplash.com/photo-1624968843142-039185461141?auto=format&fit=crop&w=400&q=80', explanation: 'Lampu TL mengandung uap raksa yang sangat berbahaya jika pecah.' },
+  { id: 16, name: 'Botol Obat Nyamuk', type: 'b3', image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=400&q=80', explanation: 'Wadah pestisida atau bahan kimia rumah tangga adalah limbah B3.' },
+  { id: 17, name: 'Masker Medis', type: 'b3', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80', explanation: 'Limbah medis bisa membawa penyakit dan harus dikelola secara khusus.' },
+  { id: 18, name: 'Aki Bekas', type: 'b3', image: 'https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?auto=format&fit=crop&w=400&q=80', explanation: 'Aki mengandung asam kuat dan timbal yang sangat merusak lingkungan.' },
 ];
 
 export const WasteSortingGame: React.FC = () => {
@@ -95,11 +96,11 @@ export const WasteSortingGame: React.FC = () => {
     const currentItem = items[currentIndex];
     if (currentItem.type === type) {
       setScore(score + 1);
-      setFeedback({ type: 'correct', message: 'Benar!' });
+      setFeedback({ type: 'correct', message: 'Benar! 🥳' });
     } else {
       const newMistakes = mistakes + 1;
       setMistakes(newMistakes);
-      setFeedback({ type: 'wrong', message: 'Salah!' });
+      setFeedback({ type: 'wrong', message: `Salah! ${currentItem.explanation}` });
       if (newMistakes >= 3) {
         setTimeout(() => setGameState('gameover'), 1000);
         return;
@@ -274,9 +275,14 @@ export const WasteSortingGame: React.FC = () => {
               exit={{ opacity: 0, scale: 0.8 }}
               className={`absolute inset-0 flex items-center justify-center z-30 pointer-events-none`}
             >
-              <div className={`px-10 py-5 rounded-full font-black text-3xl shadow-2xl flex items-center gap-4 ${feedback.type === 'correct' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>
-                {feedback.type === 'correct' ? <CheckCircle2 className="h-8 w-8" /> : <XCircle className="h-8 w-8" />}
-                {feedback.message}
+              <div className={`px-10 py-5 rounded-3xl font-black text-xl shadow-2xl flex flex-col items-center gap-4 max-w-md text-center ${feedback.type === 'correct' ? 'bg-green-500 text-white' : 'bg-red-500 text-white'}`}>
+                <div className="flex items-center gap-4 text-3xl">
+                  {feedback.type === 'correct' ? <CheckCircle2 className="h-10 w-10" /> : <XCircle className="h-10 w-10" />}
+                  {feedback.type === 'correct' ? 'Benar! 🥳' : 'Salah! 😅'}
+                </div>
+                {feedback.type === 'wrong' && (
+                  <p className="text-sm font-bold leading-relaxed opacity-90">{feedback.message.replace('Salah! ', '')}</p>
+                )}
               </div>
             </motion.div>
           )}

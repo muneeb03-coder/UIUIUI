@@ -48,9 +48,10 @@ export const Hero: React.FC<HeroProps> = ({ onLearnMore }) => {
               <div className="mb-10 p-6 bg-eco-green-100 rounded-full group-hover:scale-110 transition-transform duration-700">
                 <BarChart3 className="h-24 w-24 text-eco-green-600" />
               </div>
-              <h3 className="text-3xl font-black text-eco-green-900 mb-6">Analisis Data Sampah</h3>
+              <h3 className="text-3xl font-black text-eco-green-900 mb-4">Produksi Sampah Bandung</h3>
+              <div className="text-5xl font-black text-red-600 mb-6 animate-pulse">1.735 M³/Hari</div>
               <p className="text-xl text-gray-500 font-medium mb-10 leading-relaxed">
-                Klik tombol di samping untuk melihat data mendalam mengenai krisis sampah di Bandung.
+                Data terbaru menunjukkan lonjakan produksi sampah yang mengkhawatirkan di Kota Bandung.
               </p>
               <div className="w-full h-3 bg-gray-100 rounded-full overflow-hidden">
                 <div className="w-2/3 h-full bg-eco-green-500 animate-pulse"></div>

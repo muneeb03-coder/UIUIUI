@@ -97,7 +97,7 @@ export const BandungWaste: React.FC<BandungWasteProps> = ({ onBack }) => {
                     <span className="text-red-600 font-black text-lg">1.735 M³/Hari</span>
                   </div>
                 </div>
-                <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest text-right">Data Terkini<br/>BPS Bandung</div>
+                <div className="text-[10px] font-black text-gray-400 uppercase tracking-widest text-right">Data BPS Bandung</div>
               </div>
 
               <div className="flex items-end justify-between gap-4 h-64 px-2">

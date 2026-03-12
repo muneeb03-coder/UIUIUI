@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-eco-green-50: #f0fdf4;
+  --color-eco-green-100: #dcfce7;
+  --color-eco-green-600: #16a34a;
+  --color-eco-green-800: #166534;
+  --color-eco-green-900: #14532d;
+  
+  --color-eco-brown-100: #f5f5f4;
+  --color-eco-brown-200: #e7e5e4;
+  --color-eco-brown-600: #a68a64;
+  --color-eco-brown-800: #78350f;
+  --color-eco-brown-900: #451a03;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f5f4; /* Stone 100 */
+  color: #1c1917; /* Stone 900 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  background-color: #1c1917; /* Stone 900 */
+  color: #f5f5f4; /* Stone 100 */
+}
+
+/* Custom scrollbar for chat */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

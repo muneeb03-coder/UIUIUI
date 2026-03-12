@@ -81,7 +81,7 @@ const allSolutions: Solution[] = [
     benefits: ["Pembersih lantai & piring alami", "Pupuk cair organik", "Penjernih air selokan", "Mengurangi gas metana di TPA"],
     icon: <Droplets className="w-8 h-8" />,
     color: "bg-blue-500",
-    image: "https://images.unsplash.com/photo-1605600611284-195205ef91b6?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&q=80&w=800",
     difficulty: 1,
     difficultyLabel: "Sangat Mudah"
   },
